@@ -1,3 +1,5 @@
+package Ch4.VideoRental;
+
 public class Rental {
     private final Movie movie;
     public String title;

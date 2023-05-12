@@ -1,3 +1,5 @@
+package Ch4.VideoRental;
+
 public class ChildrenMovie extends Movie {
     public ChildrenMovie(String title) {
         super(title);

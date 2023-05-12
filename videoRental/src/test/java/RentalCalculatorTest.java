@@ -1,16 +1,18 @@
+import Ch4.VideoRental.RentalCalculator;
+import Ch4.VideoRental.VideoRegistry;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class RentalCalculatorTest {
     RentalCalculator rentalCalculator;
 
     @BeforeAll
     public static void loadRegistry() {
-        VideoRegistry.addMovie("RegularMovie", VideoRegistry.VideoType.REGULAR);
-        VideoRegistry.addMovie("ChildrenMovie", VideoRegistry.VideoType.CHILDREN);
+        VideoRegistry.addMovie("Ch4.VideoRental.RegularMovie", VideoRegistry.VideoType.REGULAR);
+        VideoRegistry.addMovie("Ch4.VideoRental.ChildrenMovie", VideoRegistry.VideoType.CHILDREN);
     }
 
     @BeforeEach
@@ -25,44 +27,44 @@ class RentalCalculatorTest {
 
     @Test
     void RegularMovie_OneDay() {
-        rentalCalculator.addRental("RegularMovie", 1);
+        rentalCalculator.addRental("Ch4.VideoRental.RegularMovie", 1);
         assertFeeAndPoints(150, 1);
     }
 
     @Test
     void RegularMovie_SecondDayFree() {
-        rentalCalculator.addRental("RegularMovie", 2);
+        rentalCalculator.addRental("Ch4.VideoRental.RegularMovie", 2);
         assertFeeAndPoints(150, 1);
     }
 
     @Test
     void RegularMovie_ThirdDayFree() {
-        rentalCalculator.addRental("RegularMovie", 3);
+        rentalCalculator.addRental("Ch4.VideoRental.RegularMovie", 3);
         assertFeeAndPoints(150, 1);
     }
 
     @Test
     void RegularMovie_FourDays() {
-        rentalCalculator.addRental("RegularMovie", 4);
+        rentalCalculator.addRental("Ch4.VideoRental.RegularMovie", 4);
         assertFeeAndPoints(300, 2);
     }
 
     @Test
     void ChildrenMovie_OneDay() {
-        rentalCalculator.addRental("ChildrenMovie", 1);
+        rentalCalculator.addRental("Ch4.VideoRental.ChildrenMovie", 1);
         assertFeeAndPoints(100, 1);
     }
 
     @Test
     void ChildrenMovie_FourDay() {
-        rentalCalculator.addRental("ChildrenMovie", 4);
+        rentalCalculator.addRental("Ch4.VideoRental.ChildrenMovie", 4);
         assertFeeAndPoints(400, 1);
     }
 
     @Test
     void OneRegularOneChildren_FourDays() {
-        rentalCalculator.addRental("RegularMovie", 4);
-        rentalCalculator.addRental("ChildrenMovie", 4);
+        rentalCalculator.addRental("Ch4.VideoRental.RegularMovie", 4);
+        rentalCalculator.addRental("Ch4.VideoRental.ChildrenMovie", 4);
 
         assertFeeAndPoints(700, 3);
     }
