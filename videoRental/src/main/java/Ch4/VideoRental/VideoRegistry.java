@@ -1,3 +1,5 @@
+package Ch4.VideoRental;
+
 import java.util.HashMap;
 import java.util.Map;
 

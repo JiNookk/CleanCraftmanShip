@@ -1,3 +1,5 @@
+package Ch4.VideoRental;
+
 public class RegularMovie extends Movie {
     public RegularMovie(String title) {
         super(title);

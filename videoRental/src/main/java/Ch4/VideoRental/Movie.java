@@ -1,3 +1,5 @@
+package Ch4.VideoRental;
+
 public abstract class Movie {
     private String title;
 

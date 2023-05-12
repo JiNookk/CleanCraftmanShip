@@ -1,3 +1,5 @@
+package Ch4.VideoRental;
+
 import java.util.ArrayList;
 import java.util.List;
 
